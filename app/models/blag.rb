@@ -1,0 +1,2 @@
+class Blag < ApplicationRecord
+end
