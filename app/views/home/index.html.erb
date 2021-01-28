@@ -94,7 +94,7 @@
                         </p>
                     </div>
                 </div>
-                <%= link_to image_tag("niko-photos-tGTVxeOr_Rs-unsplash-removebg-preview.png") %>
+                <%= image_tag("niko-photos-tGTVxeOr_Rs-unsplash-removebg-preview.png") %>
             </div>
         </section>
         <!-- Projects-->
@@ -188,21 +188,6 @@
                 <% end %>
 
 
-
-
-
-
-<a class="btn btn-primary js-scroll-trigger" <%= link_to 'New Post', new_post_path %>></a>
-
-
-
-
-
-
-
-
-
-
         </section>
 
         <!-- Signup-->
@@ -261,8 +246,15 @@
 
             </div>
         </section>
+
         <!-- Footer-->
-        <footer class="footer bg-black small text-center text-white-50"><div class="container">Copyright © Fangorn</div></footer>
+
+
+        <footer class="footer bg-black small text-center text-white-50">
+            <%= link_to new_post_path do %>
+                <div class="container" >Copyright © Fangorn</div>
+            <% end %>
+        </footer>
         <!-- Bootstrap core JS-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>

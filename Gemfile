@@ -77,3 +77,5 @@ gem 'cloudinary'
 gem 'table_print'
 
 gem 'pusher'
+
+gem 'redcarpet'
