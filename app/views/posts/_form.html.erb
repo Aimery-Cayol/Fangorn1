@@ -28,7 +28,12 @@
 
   <div class="field">
     <%= form.label :media %>
-    <%= form.text_area :media %>
+    <%= form.file_field :media %>
+  </div>
+
+  <div class="field">
+    <%= form.label :image %>
+    <%= form.file_field :image %>
   </div>
 
   <div class="actions">

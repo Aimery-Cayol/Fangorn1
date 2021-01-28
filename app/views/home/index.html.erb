@@ -166,6 +166,41 @@
                         </div>
                     </div>
                 </div>
+                <!--Loop-->
+                <% Post.all.each_with_index do |post, i| %>
+                <div class="row justify-content-center no-gutters">
+                   <div class="col-lg-6"><%= image_tag(post.image, class:"img-fluid") if post.image.attached?%></div>
+                    <div class="col-lg-6 order-lg-first">
+                        <div class="bg-black text-center h-100 project">
+                            <div class="d-flex h-100">
+                                <div class="project-text w-100 my-auto text-center text-lg-right">
+                                    <h4>
+                                    <%= link_to post_path(post.id) do %>
+                                        <p class="mb-0 text-white"><%= post.title %></p>
+                                    <% end %></h4>
+                                    <p class="mb-0 text-white-50"><%= post.media %></p>
+                                    <hr class="d-none d-lg-block mb-0 mr-0" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <% end %>
+
+
+
+
+
+
+<a class="btn btn-primary js-scroll-trigger" <%= link_to 'New Post', new_post_path %>></a>
+
+
+
+
+
+
+
+
 
 
         </section>
@@ -252,6 +287,7 @@
             <% @posts.each do |post| %>
                 <div class="post-card">
                     <img class="image" src="<%= post.media %>">
+
                     <div class="title">
                         <h2><%= post.title %></h2>
                         <a href="<%= post_path(post) %>"><%= post.title %></a>
@@ -274,7 +310,53 @@
 <a class="btn btn-primary js-scroll-trigger" <%= link_to 'New Post', new_post_path %>></a>
 
 
+
+
+<section class="projects-section bg-light" id="projects">
+            <div class="container">
+
+                <!-- Project One Row-->
+                <% Post.all.each_with_index do |post, i| %>
+                    <div class="row justify-content-center no-gutters mb-5 mb-lg-0">
+                        <div class="col-lg-6">
+                            <%= link_to post_path(post.id) do %>
+                                    <%= image_tag(post.image, class:"img-fluid") if post.image.attached?%>
+
+
+                            <% end %>
+                            <div class="bg-black text-center h-100 project">
+                                <div class="d-flex h-100">
+                                    <div class="project-text w-100 my-auto text-center text-lg-left">
+                                        <h4>
+                                        <%= link_to "Objectif : 1 Milliard", "/articles/new", class: "text-white" %></h4>
+                                        <p class="mb-0 text-white-50"><%= post.title %></p>
+                                  <a href="<%= post_path(post) %>"><%= post.title %></a>
+
+                                        
+                                        <hr class="d-none d-lg-block mb-0 ml-0" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <% end %>
+            </div>
+    </section>
+
+
+
+
+
+
     <% Post.all.each_with_index do |post, i| %>
+
+          <%= link_to post_path(post.id) do %>
+            <% if post.image.attached? %>
+              <%= image_tag post.image, alt: 'picture', class: 'img-fluid picture-garden-index' %>
+            <% else %>
+              <img class="img-fluid picture-garden-index" src="https://images.unsplash.com/photo-1438109382753-8368e7e1e7cf?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80">
+            <% end %>
+          <% end %>
 
             <h4>Potin <%= post.id %></h4>
           </div>
