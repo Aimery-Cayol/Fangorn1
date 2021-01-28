@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'home/index'
+  resources :posts
   get 'blags/index'
   get 'blags/show'
   get 'blags/new'
@@ -6,7 +8,8 @@ Rails.application.routes.draw do
   get 'blags/edit'
   get 'blags/update'
   get 'blags/destroy'
-  root 'articles#index'
+  
+  root 'home#index'
 
   resources :articles
   resources :blags

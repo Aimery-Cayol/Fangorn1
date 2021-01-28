@@ -71,3 +71,9 @@ gem 'bootstrap-sass'
 gem 'font-awesome-rails'
 
 gem 'popper_js'
+
+gem 'cloudinary'
+
+gem 'table_print'
+
+gem 'pusher'
